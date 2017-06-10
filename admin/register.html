@@ -91,8 +91,8 @@
       <!-- /services Sub Menu -->
     <!-- /Navbar -->
     <div style="height:150px;"></div>
-    <!-- Login Form -->
-    <div id="loginForm">
+    <!-- register Form -->
+    <div id="registerForm">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-4 col-md-offset-4" style="box-shadow:0px 4px 8px #E7E7E7;">
@@ -100,23 +100,32 @@
               LOGIN FORM
             </div>
             <div class="row" style="text-align:center;padding:20px;">
-              <form name="loginForm">
+              <form name="registerForm">
                   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                     <input class="mdl-textfield__input" name="emailAddress" type="email" ng-minlength=5 ng-model="loginProfile.email_id" name="emailid">
+                     <input class="mdl-textfield__input" name="name" type="text" ng-model="registerProfile.name">
+                     <label class="mdl-textfield__label" for="emailid">Name </label>
+                  </div><br>
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                     <input class="mdl-textfield__input" name="emailAddress" type="email" ng-model="registerProfile.email_id">
                      <label class="mdl-textfield__label" for="emailid">Email Address </label>
                   </div><br>
                   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                     <input class="mdl-textfield__input" name="password" type="password" ng-model="loginProfile.password" name="password">
+                     <input class="mdl-textfield__input" name="mobile" type="text" ng-model="registerProfile.mobile">
+                     <label class="mdl-textfield__label" for="emailid">Mobile </label>
+                  </div><br>
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                     <input class="mdl-textfield__input" name="password" type="password" ng-model="registerProfile.password">
                      <label class="mdl-textfield__label" for="password">Password </label>
                   </div><br>
-                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="background-color:#22B663" ng-click="login(loginProfile)">Sign In</button>
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                     <input class="mdl-textfield__input" name="repeatPassword" type="password" ng-model="registerProfile.vPassword">
+                     <label class="mdl-textfield__label" for="password">Verify Password </label>
+                  </div><p ng-show="registerProfile.password!=registerProfile.vPassword" style="color:red;"> Password doesn't Match</p><br>
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="background-color:#22B663" ng-click="register(registerProfile)" ng-disabled="registerProfile.password!=registerProfile.vPassword">Sign In</button>
               </form>
             </div>
             <div style="background-color:#EEEEEE;padding:5px;">
-              <p style="text-align:center;">DON'T HAVE A PROFILE? <a href="register.html">CREATE ONE</a></p>
-              <!-- Google SignIn -->
-              <div style="width:350%;margin-left:8%;" class="g-signin2" data-onsuccess="onSignIn"></div>
-              <!-- /Google SignIn -->
+              <p style="text-align:center;">HAVE A PROFILE? <a href="login.html">LOGIN</a></p>
             </div>
           </div>
         </div>

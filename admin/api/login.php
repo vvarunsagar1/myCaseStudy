@@ -37,9 +37,10 @@
 
       if ( $row_count == 'Y') {
           $resultJson = json_encode($result);
-          echo $resultJson;
+          echo '{"page":"'.$page.'","status":"LS", "data": "'.$resultJson.'"}';
+          // echo $resultJson;
         } else {
-          $message = 'Invalid Credentials or No User Found';
+          $message = 'IC';
           echo '{"page":"'.$page.'","status":"'.$message.'"}';
       }
   }

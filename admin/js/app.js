@@ -57,16 +57,37 @@ app.controller('loginController', function ($rootScope, $scope, $http) {
       //console.log($rootScope.loginURL);
       $http.get($rootScope.loginURL).then(function(res){
         $rootScope.profile = res.data;
-        if ($rootScope.profile.login_id != null || $rootScope.profile.login_id != undefined || $rootScope.profile.login_id != '' ){
-          //console.log('profile', $rootScope.profile);
+        console.log(res);
+        if ($rootScope.profile.status == 'LS'){
+          console.log('profile', $rootScope.profile);
           window.localStorage['profile'] = JSON.stringify($rootScope.profile);
           window.location.href = 'index.html';
-        } else if ($rootScope.profile.page == 'login.php'){
-          //console.log('message', $rootScope.profile.message);
+        } else if ($rootScope.profile.status == 'IC'){
+          console.log('message', $rootScope.profile);
+          alert('Invalid Username or Password');
         }
       })
     })
   }
+
+  $scope.register = function (registerProfile) {
+    $scope.registerProfile = registerProfile;
+    $http.get($rootScope.getIpURL).then(function(res) {
+      $rootScope.ip = res.data.ip;
+      //console.log('ip',$rootScope.ip);
+      $rootScope.registerURL = $rootScope.server + 'register.php?ip=' + $rootScope.ip + '&email=' + $scope.registerProfile.email_id + '&password=' + $scope.registerProfile.password + '&email=' + $scope.registerProfile.name + '&password=' + $scope.registerProfile.mobile ;
+      //console.log($rootScope.loginURL);
+      $http.get($rootScope.registerURL).then(function(res){
+        $rootScope.registerResponse = res.data;
+        if ($rootScope.profile.status == 'RS'){
+          alert('User Registered Successfully');
+        } else {
+          alert('Some Error Occured');
+        }
+      })
+    })
+  }
+
 });
 
 app.controller('AdminController', function ($rootScope, $scope, $http) {
