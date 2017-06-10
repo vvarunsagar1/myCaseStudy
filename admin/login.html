@@ -34,12 +34,13 @@
 
     <!-- Self Hosted -->
       <!-- Custom CSS -->
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="../css/style.css">
         <!-- <link rel="stylesheet" href="css/style.min.css"> -->
 
       <!-- Custom JS -->
         <!-- <script src="js/app.min.js"></script> -->
         <script src="js/app.js"></script>
+        <script src="../js/app.js"></script>
         <script src="js/script.js"></script>
     <!-- /Self Hosted -->
 
@@ -50,42 +51,73 @@
   </head>
   <body data-ng-app="myCaseStudyAdmin" ng-controller="loginController">
     <!-- Navbar -->
-    <div class="container-fluid" style="box-shadow:0px 4px 8px #E7E7E7;">
+    <div class="container-fluid" style="width:100%;position:fixed;z-index:10;">
       <div class="row">
-        <div class="col-md-2" style="text-align:center;">
-          <img src="img/logo1.png" alt="ABC Pvt Ltd" style="width:80px;"/>
+        <div class="myTopNavBar">
+          <div class="col-md-2 col-sm-4 col-xs-4" style="text-align:center;">
+            <img src="img/logo1.png" alt="ABC Pvt Ltd" style="width:80px;"/>
+          </div>
+          <div class="col-md-6 col-md-offset-4 col-sm-8 col-xs-8" style="text-align:right;">
+            <div class="showInMobileScreen" style="padding:15px;" data-ng-click="toggleMobileMenu()"><i class="material-icons" id="mobileMenuIcon">menu</i></div>
+            <ul id="myTopNavBarMenu" class="hideInMobileScreen">
+              <a href="index.html#" data-ng-mouseover="viewServiceSubmenu='false'"><li>HOME</li></a>
+              <a href="index.html#services" data-ng-mouseover="viewServiceSubmenu='true'"><li>PRODUCT & SERVICES</li></a>
+              <a href="index.html#contact-us" data-ng-mouseover="viewServiceSubmenu='false'"><li>REACH US</li></a>
+            </ul>
+          </div>
         </div>
-        <div class="col-md-3 col-md-offset-7">
-          <p style="padding:16px;font-size:20px;"> Admin Panel </p>
+        <div class="center" data-ng-show="mobileMenu=='active'">
+          <ul id="navSubmenu">
+            <li><a href="index.html#">HOME</a></li>
+            <li><a href="index.html#services">SERVICES</a></li>
+            <li><a href="business.html">BUSINESS CONSULTING</a></li>
+            <li><a href="design.html">DESIGNING</a></li>
+            <li><a href="training.html">TRAINING</a></li>
+            <li><a href="cloud.html">CLOUD SOLUTIONS</a></li>
+            <li><a href="index.html#contact-us">CONTACT US</a></li>
+          </ul>
         </div>
       </div>
     </div>
+      <!-- services Sub Menu -->
+      <div class="serviceSubmenu" data-ng-show="viewServiceSubmenu=='true'" data-ng-mouseleave="viewServiceSubmenu='false'">
+        <ul id="navSubmenu">
+          <li><a href="business.html">BUSINESS CONSULTING</a></li>
+          <li><a href="design.html">DESIGNING</a></li>
+          <li><a href="training.html">TRAINING</a></li>
+          <li><a href="cloud.html">CLOUD SOLUTIONS</a></li>
+        </ul>
+      </div>
+      <!-- /services Sub Menu -->
     <!-- /Navbar -->
+    <div style="height:150px;"></div>
     <!-- Login Form -->
-    <div class="container-fluid" style="margin-top:120px;">
-      <div class="row">
-        <div class="col-md-4 col-md-offset-4" style="box-shadow:0px 4px 8px #E7E7E7;">
-          <div class="row" style="text-align:center;background-color:#22B663;padding:20px;font-size:18px;">
-            LOGIN FORM
-          </div>
-          <div class="row" style="text-align:center;padding:20px;">
-            <form name="loginForm" ng-init="loginProfile.ip='';">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                   <input class="mdl-textfield__input" name="emailAddress" type="email" ng-minlength=5 ng-model="loginProfile.email_id" name="emailid">
-                   <label class="mdl-textfield__label" for="emailid">Email Address </label>
-                </div><br>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                   <input class="mdl-textfield__input" name="password" type="password" ng-model="loginProfile.password" name="password">
-                   <label class="mdl-textfield__label" for="password">Password </label>
-                </div><br>
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="background-color:#22B663" ng-click="loginUser(loginProfile)">Sign In</button>
-            </form>
-          </div>
-          <div style="background-color:#EEEEEE;padding:5px;">
-            <p style="text-align:center;">DON'T HAVE A PROFILE? Try Login with Google</p>
-            <!-- Google SignIn -->
-            <div style="width:350%;margin-left:8%;" class="g-signin2" data-onsuccess="onSignIn"></div>
-            <!-- /Google SignIn -->
+    <div id="loginForm">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4" style="box-shadow:0px 4px 8px #E7E7E7;">
+            <div class="row" style="text-align:center;background-color:#22B663;padding:20px;font-size:18px;">
+              LOGIN FORM
+            </div>
+            <div class="row" style="text-align:center;padding:20px;">
+              <form name="loginForm">
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                     <input class="mdl-textfield__input" name="emailAddress" type="email" ng-minlength=5 ng-model="loginProfile.email_id" name="emailid">
+                     <label class="mdl-textfield__label" for="emailid">Email Address </label>
+                  </div><br>
+                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                     <input class="mdl-textfield__input" name="password" type="password" ng-model="loginProfile.password" name="password">
+                     <label class="mdl-textfield__label" for="password">Password </label>
+                  </div><br>
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="background-color:#22B663" ng-click="login(loginProfile)">Sign In</button>
+              </form>
+            </div>
+            <div style="background-color:#EEEEEE;padding:5px;">
+              <p style="text-align:center;">DON'T HAVE A PROFILE? Try Login with Google</p>
+              <!-- Google SignIn -->
+              <div style="width:350%;margin-left:8%;" class="g-signin2" data-onsuccess="onSignIn"></div>
+              <!-- /Google SignIn -->
+            </div>
           </div>
         </div>
       </div>
