@@ -52,12 +52,12 @@ ul#myTopNavBarMenu {
 }
 ul#myTopNavBarMenu li{
   display:inline;
-  padding:15px 21px 15px 20px;
+  padding:15px;
   border-radius: 5px;
   font-weight:bold;
 }
 ul#myTopNavBarMenu li:hover{
-  background-color: #64FFDA;
+  background-color: black;
 }
 ul#myTopNavBarMenu a{
   font-weight:bold;
@@ -67,11 +67,12 @@ ul#myTopNavBarMenu a:hover{
   text-decoration: none;
   color: white;
 }
+
 /*Fixed Social Media Icons*/
 .fixedSocialMediaDiv {
   position:fixed;
-  left: 95%;
-  width:5%;
+  left: 97%;
+  width:3%;
   z-index: 10;
   top:100px;
   margin:1px;
@@ -80,33 +81,6 @@ ul#myTopNavBarMenu a:hover{
 
 #sideSocialMediaIcons {
   font-size: 45px;
-}
-.serviceSubmenu {
-  position:fixed;
-  width:14.6%;
-  left:73.4%;
-  background-color:white;
-  z-index:11;
-  top:75px;
-}
-ul#navSubmenu {
-  list-style-type:none;
-  background-color: white;
-  padding: 0px;
-}
-ul#navSubmenu li {
-  padding: 5px 5px 5px 10px;
-}
-ul#navSubmenu li a{
-  color: black;
-}
-ul#navSubmenu li:hover{
-  color: white;
-  text-decoration: none;
-  background-color: #64FFDA;
-}
-ul#navSubmenu li a:hover{
-  text-decoration: none;
 }
 
 /*------------------------------------------------------------------
@@ -133,25 +107,6 @@ Product and Services
   color:black;
   font-size: 16px;
 }
-
-#serviceItemDetailHead {
-  color: white;
-  font-size: 17px;
-  margin-top: 20px;
-}
-
-#serviceItemDetailContent {
-  color: white;
-  font-size: 15px;
-  padding:8px;
-}
-
-#serviceItemDetailButton {
-  padding: 10px;
-  border: 1px solid white;
-  color: white;
-  text-decoration: none;
-}
 /*---------------------------------------------------*/
  /*Contact US*/
  /*---------------------------------------------------*/
@@ -159,7 +114,7 @@ Product and Services
   border:1px solid #DDDDDD;
   padding: 10px 20px 10px 20px;
   font-size: 18px;
-  color: black;
+  color: #DDDDDD;
 }
 
 #contact-form-inputs:focus {
@@ -205,33 +160,4 @@ Footer
 #footerInformationContent:hover {
   text-decoration: none;
   padding: 15px;
-}
-
-/*=======================================================================
-Services Sub Pages
-=======================================================================*/
-
-.businessConsultingBackground{
-    background-image:    url('../img/bg/business.jpg');
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center;
-}
-.designConsultingBackground{
-    background-image:    url('../img/bg/web.jpg');
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center;
-}
-.cloudConsultingBackground{
-    background-image:    url('../img/bg/cloud.jpg');
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center;
-}
-.trainingConsultingBackground{
-    background-image:    url('../img/bg/training.jpg');
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center;
 }
