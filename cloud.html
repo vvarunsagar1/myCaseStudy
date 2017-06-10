@@ -48,34 +48,45 @@
         js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
-    <!-- Navbar -->
-    <div class="container-fluid" style="width:100%;position:fixed;z-index:10;">
-      <div class="row">
-        <div class="myTopNavBar">
-          <div class="col-md-2" style="text-align:center;">
-            <img src="img/logo1.png" alt="ABC Pvt Ltd" style="width:80px;"/>
+
+      <!-- Navbar -->
+      <div class="container-fluid" style="width:100%;position:fixed;z-index:10;">
+        <div class="row">
+          <div class="myTopNavBar">
+            <div class="col-md-2 col-sm-4 col-xs-4" style="text-align:center;">
+              <img src="img/logo1.png" alt="ABC Pvt Ltd" style="width:80px;"/>
+            </div>
+            <div class="col-md-6 col-md-offset-4 col-sm-8 col-xs-8" style="text-align:right;">
+              <div class="showInMobileScreen" style="padding:15px;" data-ng-click="toggleMobileMenu()"><i class="material-icons" id="mobileMenuIcon">menu</i></div>
+              <ul id="myTopNavBarMenu" class="hideInMobileScreen">
+                <a href="index.html#" data-ng-mouseover="viewServiceSubmenu='false'"><li>HOME</li></a>
+                <a href="index.html#services" data-ng-mouseover="viewServiceSubmenu='true'"><li>PRODUCT & SERVICES</li></a>
+                <a href="index.html#contact-us" data-ng-mouseover="viewServiceSubmenu='false'"><li>REACH US</li></a>
+              </ul>
+            </div>
           </div>
-          <div class="col-md-6 col-md-offset-4" style="text-align:right;">
-            <ul id="myTopNavBarMenu">
-              <a href="index.html#" data-ng-mouseover="viewServiceSubmenu='false'"><li>HOME</li></a>
-              <a href="index.html#services" data-ng-mouseover="viewServiceSubmenu='true'"><li>PRODUCT & SERVICES</li></a>
-              <a href="index.html#contact-us" data-ng-mouseover="viewServiceSubmenu='false'"><li>REACH US</li></a>
+          <div class="center" data-ng-show="mobileMenu=='active'">
+            <ul id="navSubmenu">
+              <li><a href="business.html">BUSINESS CONSULTING</a></li>
+              <li><a href="design.html">DESIGNING</a></li>
+              <li><a href="training.html">TRAINING</a></li>
+              <li><a href="cloud.html">CLOUD SOLUTIONS</a></li>
             </ul>
           </div>
         </div>
       </div>
-    </div>
-      <!-- services Sub Menu -->
-      <div class="serviceSubmenu" data-ng-show="viewServiceSubmenu=='true'" data-ng-mouseleave="viewServiceSubmenu='false'">
-        <ul id="navSubmenu">
-          <li><a href="business.html">BUSINESS CONSULTING</a></li>
-          <li><a href="design.html">DESIGNING</a></li>
-          <li><a href="training.html">TRAINING</a></li>
-          <li><a href="cloud.html">CLOUD SOLUTIONS</a></li>
-        </ul>
-      </div>
-      <!-- /services Sub Menu -->
-    <!-- /Navbar -->
+        <!-- services Sub Menu -->
+        <div class="serviceSubmenu" data-ng-show="viewServiceSubmenu=='true'" data-ng-mouseleave="viewServiceSubmenu='false'">
+          <ul id="navSubmenu">
+            <li><a href="business.html">BUSINESS CONSULTING</a></li>
+            <li><a href="design.html">DESIGNING</a></li>
+            <li><a href="training.html">TRAINING</a></li>
+            <li><a href="cloud.html">CLOUD SOLUTIONS</a></li>
+          </ul>
+        </div>
+        <!-- /services Sub Menu -->
+      <!-- /Navbar -->
+
 
     <!-- Overlapse the Fixed navbar -->
     <div style="height:80px;background-color:white;"></div>
@@ -94,10 +105,30 @@
     </div>
     <!-- /Fixed Social Media Icons -->
 
-    <div style="font-size:40px;color:white;text-align:center;background-color:rgba(0,0,0,0.5);padding:200px;">Cloud Solutions</div>
-    <div style="background-color:white;height:500px;"></div>
-
-
+    <div style="font-size:40px;color:white;text-align:center;background-color:rgba(0,0,0,0.5);padding:150px 150px 50px 150px;">
+      Cloud Solutions
+      <p style="padding:50px;">Cloud services helps enterprises in enhancing customer experience, accelerating business outcomes and building future ready capabilities. We help our customers optimize, scale, manage and outsource IT resources. Our industry solutions help simplify processes, modernize applications and enable cognitive intelligence to meet our customer's business needs.</p>
+    </div>
+    <div style="background-color:white;height:500px;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 center" style="padding:20px;">
+            <div style="font-size:30px;padding:50px;">Cloud Platforms</div>
+            <div class="row" style="box-shadow:0px 4px 8px grey;">
+              <div class="col-md-4" style="height:250px;border-right:1px solid grey;padding:45px 25px 25px 25px;">
+                <img src="img/cs/aws.png" style="width:100%" alt="Amazon Web Services"/>
+              </div>
+              <div class="col-md-4" style="height:250px;border-right:1px solid grey;padding:40px 25px 25px 25px;">
+                <img src="img/cs/msazure.png" style="width:100%"  alt="Microsoft Azure"/>
+              </div>
+              <div class="col-md-4" style="height:250px;">
+                <img src="img/cs/gcp.jpg" style="width:100%" alt="Google Cloud Platform"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Footer -->
     <div id="footer" data-ng-mouseover="viewServiceSubmenu='false'">
       <div class="container-fluid">

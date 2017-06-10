@@ -3,10 +3,22 @@ var app = angular.module('myCaseStudy',[]);
 app.run(function ($rootScope,$http) {
   console.log('App Starts');
   $rootScope.server="http://localhost/myCaseStudy/admin/api/";
+  $rootScope.mobileMenu = 'hide';
   $rootScope.getIpURL = $rootScope.server + 'get_ip.php';
+
   $rootScope.activateServiceItemView = function (view) {
     $rootScope.serviceItemView = view;
   }
+
+  $rootScope.toggleMobileMenu = function () {
+    console.log('toggle');
+    if ($rootScope.mobileMenu == 'hide') {
+      $rootScope.mobileMenu = 'active';
+    } else if ($rootScope.mobileMenu == 'active') {
+      $rootScope.mobileMenu = 'hide';
+    }
+  }
+
   $http.get($rootScope.getIpURL).then(function(res) {
     $rootScope.ip = res.data.ip;
     console.log('ip',$rootScope.ip);

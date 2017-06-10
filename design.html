@@ -48,34 +48,43 @@
         js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
-    <!-- Navbar -->
-    <div class="container-fluid" style="width:100%;position:fixed;z-index:10;">
-      <div class="row">
-        <div class="myTopNavBar">
-          <div class="col-md-2" style="text-align:center;">
-            <img src="img/logo1.png" alt="ABC Pvt Ltd" style="width:80px;"/>
+      <!-- Navbar -->
+      <div class="container-fluid" style="width:100%;position:fixed;z-index:10;">
+        <div class="row">
+          <div class="myTopNavBar">
+            <div class="col-md-2 col-sm-4 col-xs-4" style="text-align:center;">
+              <img src="img/logo1.png" alt="ABC Pvt Ltd" style="width:80px;"/>
+            </div>
+            <div class="col-md-6 col-md-offset-4 col-sm-8 col-xs-8" style="text-align:right;">
+              <div class="showInMobileScreen" style="padding:15px;" data-ng-click="toggleMobileMenu()"><i class="material-icons" id="mobileMenuIcon">menu</i></div>
+              <ul id="myTopNavBarMenu" class="hideInMobileScreen">
+                <a href="index.html#" data-ng-mouseover="viewServiceSubmenu='false'"><li>HOME</li></a>
+                <a href="index.html#services" data-ng-mouseover="viewServiceSubmenu='true'"><li>PRODUCT & SERVICES</li></a>
+                <a href="index.html#contact-us" data-ng-mouseover="viewServiceSubmenu='false'"><li>REACH US</li></a>
+              </ul>
+            </div>
           </div>
-          <div class="col-md-6 col-md-offset-4" style="text-align:right;">
-            <ul id="myTopNavBarMenu">
-              <a href="index.html#" data-ng-mouseover="viewServiceSubmenu='false'"><li>HOME</li></a>
-              <a href="index.html#services" data-ng-mouseover="viewServiceSubmenu='true'"><li>PRODUCT & SERVICES</li></a>
-              <a href="index.html#contact-us" data-ng-mouseover="viewServiceSubmenu='false'"><li>REACH US</li></a>
+          <div class="center" data-ng-show="mobileMenu=='active'">
+            <ul id="navSubmenu">
+              <li><a href="business.html">BUSINESS CONSULTING</a></li>
+              <li><a href="design.html">DESIGNING</a></li>
+              <li><a href="training.html">TRAINING</a></li>
+              <li><a href="cloud.html">CLOUD SOLUTIONS</a></li>
             </ul>
           </div>
         </div>
       </div>
-    </div>
-      <!-- services Sub Menu -->
-      <div class="serviceSubmenu" data-ng-show="viewServiceSubmenu=='true'" data-ng-mouseleave="viewServiceSubmenu='false'">
-        <ul id="navSubmenu">
-          <li><a href="business.html">BUSINESS CONSULTING</a></li>
-          <li><a href="design.html">DESIGNING</a></li>
-          <li><a href="training.html">TRAINING</a></li>
-          <li><a href="cloud.html">CLOUD SOLUTIONS</a></li>
-        </ul>
-      </div>
-      <!-- /services Sub Menu -->
-    <!-- /Navbar -->
+        <!-- services Sub Menu -->
+        <div class="serviceSubmenu" data-ng-show="viewServiceSubmenu=='true'" data-ng-mouseleave="viewServiceSubmenu='false'">
+          <ul id="navSubmenu">
+            <li><a href="business.html">BUSINESS CONSULTING</a></li>
+            <li><a href="design.html">DESIGNING</a></li>
+            <li><a href="training.html">TRAINING</a></li>
+            <li><a href="cloud.html">CLOUD SOLUTIONS</a></li>
+          </ul>
+        </div>
+        <!-- /services Sub Menu -->
+      <!-- /Navbar -->
 
     <!-- Overlapse the Fixed navbar -->
     <div style="height:80px;background-color:white;"></div>
@@ -94,8 +103,24 @@
     </div>
     <!-- /Fixed Social Media Icons -->
 
-    <div style="font-size:40px;color:white;text-align:center;background-color:rgba(0,0,0,0.5);padding:200px;">Web Design</div>
-    <div style="background-color:white;height:500px;"></div>
+    <div style="font-size:40px;color:white;text-align:center;background-color:rgba(0,0,0,0.5);padding:150px 150px 50px 150px;">
+      Web Design
+      <p style="padding:30px;">When you are in Rome be a Roman says the proverb, so when the world is moving with technology why not to take part in it. So let your business start to speak to the entire World by effective Web site. As you know Success in the business comes by doing things differently with your competitor. We give you the hedge over your competitor for success by creating simple but not easy website.</p>
+    </div>
+    <div style="background-color:white;height:500px;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-5 col-md-offset-1" style="text-align:center;box-shadow:0px 4px 8px #F1F1F1;margin-right:5px;">
+            <h3>Responsive design</h3>
+            <p>Extend Your Reach with a responsive web design! The explosion of electronic gadgetry releases and its use has greatly affected the website design. As more people go online for longer duration, the use of desktop computer declines. In fact, more people use their smart phones to browse the net than their desktop. A responsive website has the capability to adapt to the device being used.</p>
+          </div>
+          <div class="col-md-5" style="text-align:center;box-shadow:0px 4px 8px #F1F1F1;margin-left:5px;">
+            <h3>Dynamic Website</h3>
+            <p>Our solution deliver custom created e-commerce solutions, content management solutions in coming up with your required websites. web site resolution makes a speciality of making any reasonably Dynamic web site keeping in mind its customer’s specific necessities. This set-up is useful for those that want to create frequent changes to their websites together with text and image. </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <div id="footer" data-ng-mouseover="viewServiceSubmenu='false'">

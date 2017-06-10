@@ -52,16 +52,25 @@
     <div class="container-fluid" style="width:100%;position:fixed;z-index:10;">
       <div class="row">
         <div class="myTopNavBar">
-          <div class="col-md-2" style="text-align:center;">
+          <div class="col-md-2 col-sm-4 col-xs-4" style="text-align:center;">
             <img src="img/logo1.png" alt="ABC Pvt Ltd" style="width:80px;"/>
           </div>
-          <div class="col-md-6 col-md-offset-4" style="text-align:right;">
-            <ul id="myTopNavBarMenu">
+          <div class="col-md-6 col-md-offset-4 col-sm-8 col-xs-8" style="text-align:right;">
+            <div class="showInMobileScreen" style="padding:15px;" data-ng-click="toggleMobileMenu()"><i class="material-icons" id="mobileMenuIcon">menu</i></div>
+            <ul id="myTopNavBarMenu" class="hideInMobileScreen">
               <a href="#" data-ng-mouseover="viewServiceSubmenu='false'"><li>HOME</li></a>
               <a href="#services" data-ng-mouseover="viewServiceSubmenu='true'"><li>PRODUCT & SERVICES</li></a>
               <a href="#contact-us" data-ng-mouseover="viewServiceSubmenu='false'"><li>REACH US</li></a>
             </ul>
           </div>
+        </div>
+        <div class="center" data-ng-show="mobileMenu=='active'">
+          <ul id="navSubmenu">
+            <li><a href="business.html">BUSINESS CONSULTING</a></li>
+            <li><a href="design.html">DESIGNING</a></li>
+            <li><a href="training.html">TRAINING</a></li>
+            <li><a href="cloud.html">CLOUD SOLUTIONS</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -95,7 +104,7 @@
     <!-- /Fixed Social Media Icons -->
 
     <!-- Home Slider -->
-    <iframe width="100%" height="550" frameborder="0" style="border:0" src="lib/slider/standard.html" allowfullscreen data-ng-mouseover="viewServiceSubmenu='false'"></iframe>
+    <iframe class="homeSlider" frameborder="0" style="border:0" src="lib/slider/standard.html" allowfullscreen data-ng-mouseover="viewServiceSubmenu='false'"></iframe>
     <!-- /Home Slider -->
 
     <!-- Product & Services -->
@@ -105,20 +114,20 @@
           <div class="div-header">PRODUCT & SERVICES</div>
         </div>
         <div class="row" ng-init="serviceItemView==''">
-          <div class="col-md-10 col-md-offset-1" data-ng-mouseleave="activateServiceItemView('')">
-            <div class="row serviceItem" data-ng-mouseover="activateServiceItemView('p')">
-              <div data-ng-hide="serviceItemView=='p'">
-                <p style="padding:20px;">Data Saver</p>
-                <p >As users gravitate heavily toward mobile data, specifically apps that are image and video heavy, data usage across these apps piles up in no time. Compression and optimizing mobile data is key to giving users a better experience and increased cost efficiency.</p>
+          <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12" data-ng-mouseleave="activateServiceItemView('')">
+            <div class="row">
+              <div class="col-md-3 col-sm-3 col-xs-3 productItem">
+                <i class="material-icons" id="serviceItemIcon">important_devices</i>
+                <p id="serviceItemHead">DATA SAVER</p>
               </div>
-              <div data-ng-show="serviceItemView=='p'">
-                <p id="serviceItemDetailHead">Data Saver</p>
-                <p id="serviceItemDetailContent">Mobile video traffic was more than 50% of overall mobile data traffic. Vine, Instagram, YouTube… it’s all about video nowadays. Video uses a lot of data, and we make videos lighter, which means you can watch more video and get a better user experience.</p>
-                <a href="#" id="serviceItemDetailButton">LEARN MORE</a>
+              <div class="col-md-9 col-sm-9 col-xs-9 productItemDetail">
+                  <p id="serviceItemDetailHead"> DATA SAVER</p>
+                  <p id="serviceItemDetailContent">As users gravitate heavily toward mobile data, data usage across these apps piles up in no time. Compression and optimizing mobile data is key to giving users a better experience and increased cost efficiency. We make the things lighter, which means you get a better user experience.</p>
+                  <a href="#" id="serviceItemDetailButton">LEARN MORE</a>
               </div>
             </div>
             <div class="row">
-              <div class="col-md-3 serviceItem" data-ng-mouseover="activateServiceItemView('bc')">
+              <div class="col-md-3 col-sm-6 col-xs-6 serviceItem" data-ng-mouseover="activateServiceItemView('bc')">
                 <div data-ng-hide="serviceItemView=='bc'">
                   <i class="material-icons" id="serviceItemIcon">business_center</i>
                   <p id="serviceItemHead">Business Consulting</p>
@@ -126,21 +135,21 @@
                 <div data-ng-show="serviceItemView=='bc'">
                   <p id="serviceItemDetailHead">Business Consulting</p>
                   <p id="serviceItemDetailContent">Is your website engineered to build your authority status and provide you with a stream of leads?</p>
-                  <a href="#" id="serviceItemDetailButton">LEARN MORE</a>
+                  <a href="business.html" id="serviceItemDetailButton">LEARN MORE</a>
                 </div>
               </div>
-              <div class="col-md-3 serviceItem" data-ng-mouseover="activateServiceItemView('d')">
+              <div class="col-md-3 col-sm-6 col-xs-6 serviceItem" data-ng-mouseover="activateServiceItemView('d')">
                 <div data-ng-hide="serviceItemView=='d'">
                   <i class="material-icons" id="serviceItemIcon">developer_mode</i>
                   <p id="serviceItemHead">Designing</p>
                 </div>
                 <div data-ng-show="serviceItemView=='d'">
                   <p id="serviceItemDetailHead">Designing</p>
-                  <p id="serviceItemDetailContent">Is your website built for multidevice support, We provide the best responsive designs supporting across various devices.</p>
-                  <a href="#" id="serviceItemDetailButton">LEARN MORE</a>
+                  <p id="serviceItemDetailContent" style="padding:10px;">Is your website built for multidevice support, We provide the best responsive designs supporting across various devices.</p>
+                  <a href="design.html" id="serviceItemDetailButton">LEARN MORE</a>
                 </div>
               </div>
-              <div class="col-md-3 serviceItem" data-ng-mouseover="activateServiceItemView('t')">
+              <div class="col-md-3 col-sm-6 col-xs-6 serviceItem" data-ng-mouseover="activateServiceItemView('t')">
                 <div data-ng-hide="serviceItemView=='t'">
                   <i class="material-icons" id="serviceItemIcon">school</i>
                   <p id="serviceItemHead">Training</p>
@@ -148,10 +157,10 @@
                 <div data-ng-show="serviceItemView=='t'">
                   <p id="serviceItemDetailHead">Training</p>
                   <p id="serviceItemDetailContent">We Provide Corporate Training for the candidates based on UI Devlopment, Backend Devlopment and Full Stack Development on various Technologies.</p>
-                  <a href="#" id="serviceItemDetailButton">LEARN MORE</a>
+                  <a href="training.html" id="serviceItemDetailButton">LEARN MORE</a>
                 </div>
               </div>
-              <div class="col-md-3 serviceItem" data-ng-mouseover="activateServiceItemView('cs')">
+              <div class="col-md-3 col-sm-6 col-xs-6 serviceItem" data-ng-mouseover="activateServiceItemView('cs')">
                 <div data-ng-hide="serviceItemView=='cs'">
                   <i class="material-icons" id="serviceItemIcon">wb_cloudy</i>
                   <p id="serviceItemHead">Cloud Solutions</p>
@@ -159,7 +168,7 @@
                 <div data-ng-show="serviceItemView=='cs'">
                   <p id="serviceItemDetailHead">Cloud Solutions</p>
                   <p id="serviceItemDetailContent">We Provide Cloud Solutions with AWS, Microsoft Azure and we also handle VPS</p>
-                  <a href="#" id="serviceItemDetailButton">LEARN MORE</a>
+                  <a href="cloud.html" id="serviceItemDetailButton">LEARN MORE</a>
                 </div>
               </div>
             </div>

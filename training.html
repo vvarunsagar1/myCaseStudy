@@ -48,34 +48,45 @@
         js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
-    <!-- Navbar -->
-    <div class="container-fluid" style="width:100%;position:fixed;z-index:10;">
-      <div class="row">
-        <div class="myTopNavBar">
-          <div class="col-md-2" style="text-align:center;">
-            <img src="img/logo1.png" alt="ABC Pvt Ltd" style="width:80px;"/>
+
+      <!-- Navbar -->
+      <div class="container-fluid" style="width:100%;position:fixed;z-index:10;">
+        <div class="row">
+          <div class="myTopNavBar">
+            <div class="col-md-2 col-sm-4 col-xs-4" style="text-align:center;">
+              <img src="img/logo1.png" alt="ABC Pvt Ltd" style="width:80px;"/>
+            </div>
+            <div class="col-md-6 col-md-offset-4 col-sm-8 col-xs-8" style="text-align:right;">
+              <div class="showInMobileScreen" style="padding:15px;" data-ng-click="toggleMobileMenu()"><i class="material-icons" id="mobileMenuIcon">menu</i></div>
+              <ul id="myTopNavBarMenu" class="hideInMobileScreen">
+                <a href="index.html#" data-ng-mouseover="viewServiceSubmenu='false'"><li>HOME</li></a>
+                <a href="index.html#services" data-ng-mouseover="viewServiceSubmenu='true'"><li>PRODUCT & SERVICES</li></a>
+                <a href="index.html#contact-us" data-ng-mouseover="viewServiceSubmenu='false'"><li>REACH US</li></a>
+              </ul>
+            </div>
           </div>
-          <div class="col-md-6 col-md-offset-4" style="text-align:right;">
-            <ul id="myTopNavBarMenu">
-              <a href="index.html#" data-ng-mouseover="viewServiceSubmenu='false'"><li>HOME</li></a>
-              <a href="index.html#services" data-ng-mouseover="viewServiceSubmenu='true'"><li>PRODUCT & SERVICES</li></a>
-              <a href="index.html#contact-us" data-ng-mouseover="viewServiceSubmenu='false'"><li>REACH US</li></a>
+          <div class="center" data-ng-show="mobileMenu=='active'">
+            <ul id="navSubmenu">
+              <li><a href="business.html">BUSINESS CONSULTING</a></li>
+              <li><a href="design.html">DESIGNING</a></li>
+              <li><a href="training.html">TRAINING</a></li>
+              <li><a href="cloud.html">CLOUD SOLUTIONS</a></li>
             </ul>
           </div>
         </div>
       </div>
-    </div>
-      <!-- services Sub Menu -->
-      <div class="serviceSubmenu" data-ng-show="viewServiceSubmenu=='true'" data-ng-mouseleave="viewServiceSubmenu='false'">
-        <ul id="navSubmenu">
-          <li><a href="business.html">BUSINESS CONSULTING</a></li>
-          <li><a href="design.html">DESIGNING</a></li>
-          <li><a href="training.html">TRAINING</a></li>
-          <li><a href="cloud.html">CLOUD SOLUTIONS</a></li>
-        </ul>
-      </div>
-      <!-- /services Sub Menu -->
-    <!-- /Navbar -->
+        <!-- services Sub Menu -->
+        <div class="serviceSubmenu" data-ng-show="viewServiceSubmenu=='true'" data-ng-mouseleave="viewServiceSubmenu='false'">
+          <ul id="navSubmenu">
+            <li><a href="business.html">BUSINESS CONSULTING</a></li>
+            <li><a href="design.html">DESIGNING</a></li>
+            <li><a href="training.html">TRAINING</a></li>
+            <li><a href="cloud.html">CLOUD SOLUTIONS</a></li>
+          </ul>
+        </div>
+        <!-- /services Sub Menu -->
+      <!-- /Navbar -->
+
 
     <!-- Overlapse the Fixed navbar -->
     <div style="height:80px;background-color:white;"></div>
