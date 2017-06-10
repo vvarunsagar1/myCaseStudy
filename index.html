@@ -39,7 +39,7 @@
     <!-- /Self Hosted -->
 
   </head>
-  <body data-ng-app="myCaseStudy" data-ng-controller="HomeController">
+  <body data-ng-app="myCaseStudy" data-ng-controller="HomeController" id="indexBackground">
     <div id="fb-root"></div>
       <script>(function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -115,7 +115,7 @@
     <div id="services" style="padding:50px 0px 50px 0px;" data-ng-mouseover="viewServiceSubmenu='false'">
       <div class="container-fluid">
         <div class="row">
-          <div class="div-header">PRODUCT & SERVICES</div>
+          <div class="div-header white">PRODUCT & SERVICES</div>
         </div>
         <div class="row" ng-init="serviceItemView==''">
           <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12" data-ng-mouseleave="activateServiceItemView('')">
@@ -182,15 +182,42 @@
     </div>
     <!-- Product & Services -->
 
+    <div id="visitors">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1" style="background-color:rgba(0,0,0,0.5)">
+            <div class="col-md-2 col-md-offset-2" style="text-align:center;">
+              <div style="border-radius:50%;border:4px solid #22B663;padding:25%;margin:20px;color:#22B663;font-size:25px;">
+                {{visitors.length}}
+              </div>
+              <h4 class="white">VISITORS</h4>
+            </div>
+            <div class="col-md-2 col-md-offset-1" style="text-align:center;">
+              <div style="border-radius:50%;border:4px solid #22B663;padding:25%;margin:20px;color:#22B663;font-size:25px;">
+                {{views}}
+              </div>
+              <h4 class="white">VIEWS</h4>
+            </div>
+            <div class="col-md-2 col-md-offset-1" style="text-align:center;">
+              <div style="border-radius:50%;border:4px solid #22B663;padding:25%;margin:20px;color:#22B663;font-size:25px;">
+                {{enquiries.length}}
+              </div>
+              <h4 class="white">ENQUIRIES</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Contact Us -->
     <div id="contact-us" style="padding-top:50px;" data-ng-mouseover="viewServiceSubmenu='false'">
       <div class="container-fluid">
         <div class="row">
-          <div class="div-header">REACH US</div>
+          <div class="div-header white">REACH US</div>
         </div>
         <div style="height:20px;"></div>
         <div class="row">
-          <div class="col-md-10 col-md-offset-1">
+          <div class="col-md-10 col-md-offset-1" style="background-color:white;padding:10px;">
             <div class="col-md-6">
               <!-- Google Maps -->
               <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=Near+Kotak+mahindra+bank,+Nanjundeshawara+Nagar,+Hosur&key=AIzaSyCFcywxqQCSP_xedCNJiRQRsPUqt_viJ8I" allowfullscreen></iframe>

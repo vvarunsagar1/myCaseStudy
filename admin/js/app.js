@@ -27,7 +27,7 @@ function onSignIn(googleUser) {
 app.run(function($rootScope, $http) {
   console.log('Admin App');
   $rootScope.server="http://localhost/myCaseStudy/admin/api/";
-  $rootScope.getIpURL = 'http://54.169.84.179/api/get_ip.php'
+  $rootScope.getIpURL = $rootScope.server+'get_ip.php';
   $http.get($rootScope.getIpURL).then(function(res) {
     $rootScope.ip = res.data.ip;
     console.log('ip',$rootScope.ip);

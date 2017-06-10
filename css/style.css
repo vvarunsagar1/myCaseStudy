@@ -149,6 +149,13 @@ Home
   }
 }
 
+#indexBackground{
+  background-image:    url('../img/bg/web.jpg');
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
 
 /*------------------------------------------------------------------
 Product and Services
