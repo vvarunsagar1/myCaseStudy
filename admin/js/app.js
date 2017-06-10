@@ -75,11 +75,11 @@ app.controller('loginController', function ($rootScope, $scope, $http) {
     $http.get($rootScope.getIpURL).then(function(res) {
       $rootScope.ip = res.data.ip;
       //console.log('ip',$rootScope.ip);
-      $rootScope.registerURL = $rootScope.server + 'register.php?ip=' + $rootScope.ip + '&email=' + $scope.registerProfile.email_id + '&password=' + $scope.registerProfile.password + '&email=' + $scope.registerProfile.name + '&password=' + $scope.registerProfile.mobile ;
+      $rootScope.registerURL = $rootScope.server + 'register.php?ip=' + $rootScope.ip + '&email=' + $scope.registerProfile.email_id + '&password=' + $scope.registerProfile.password + '&name=' + $scope.registerProfile.name + '&mobile=' + $scope.registerProfile.mobile ;
       //console.log($rootScope.loginURL);
       $http.get($rootScope.registerURL).then(function(res){
         $rootScope.registerResponse = res.data;
-        if ($rootScope.profile.status == 'RS'){
+        if ($rootScope.registerResponse.status == 'RS'){
           alert('User Registered Successfully');
         } else {
           alert('Some Error Occured');

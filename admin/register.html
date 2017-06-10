@@ -103,7 +103,7 @@
               <form name="registerForm">
                   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                      <input class="mdl-textfield__input" name="name" type="text" ng-model="registerProfile.name">
-                     <label class="mdl-textfield__label" for="emailid">Name </label>
+                     <label class="mdl-textfield__label" for="name">Name </label>
                   </div><br>
                   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                      <input class="mdl-textfield__input" name="emailAddress" type="email" ng-model="registerProfile.email_id">
@@ -111,7 +111,7 @@
                   </div><br>
                   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                      <input class="mdl-textfield__input" name="mobile" type="text" ng-model="registerProfile.mobile">
-                     <label class="mdl-textfield__label" for="emailid">Mobile </label>
+                     <label class="mdl-textfield__label" for="mobile">Mobile </label>
                   </div><br>
                   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                      <input class="mdl-textfield__input" name="password" type="password" ng-model="registerProfile.password">
@@ -119,9 +119,9 @@
                   </div><br>
                   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                      <input class="mdl-textfield__input" name="repeatPassword" type="password" ng-model="registerProfile.vPassword">
-                     <label class="mdl-textfield__label" for="password">Verify Password </label>
+                     <label class="mdl-textfield__label" for="repeatPassword">Verify Password </label>
                   </div><p ng-show="registerProfile.password!=registerProfile.vPassword" style="color:red;"> Password doesn't Match</p><br>
-                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="background-color:#22B663" ng-click="register(registerProfile)" ng-disabled="registerProfile.password!=registerProfile.vPassword">Sign In</button>
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="background-color:#22B663" ng-click="register(registerProfile)" ng-disabled="registerProfile.password!=registerProfile.vPassword">Register</button>
               </form>
             </div>
             <div style="background-color:#EEEEEE;padding:5px;">

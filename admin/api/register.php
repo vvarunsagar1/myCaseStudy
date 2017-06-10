@@ -2,7 +2,7 @@
   header('Access-Control-Allow-Origin: *');
   include_once 'config.php';
 
-  $page='monitor_visitors.php';
+  $page='register.php';
 
   if($_GET['ip'] && $_GET['name'] && $_GET['email'] && $_GET['password'] && $_GET['mobile']) {
     try {
@@ -24,7 +24,7 @@
     $user_type = 'A';
     $e_verify = 'N';
     $del_flg = 'N';
-    
+
     $insertNewRecord = "INSERT INTO `users`(`email_id`, `mobile`, `name`, `password`, `user_type`, `e_verify`, `CRTD_DT`, `CRTD_IP`, `DEL_FLG`) VALUES (:email,:mobile,:name,:password,:user_type,:e_verify,NOW(3),:ip,:del_flg)";
     $query = $dbc->prepare($insertNewRecord);
     $query->bindParam(":email", $email);
