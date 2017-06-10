@@ -2,7 +2,7 @@ var app = angular.module('myCaseStudy',[]);
 
 app.run(function ($rootScope,$http) {
   //console.log('App Starts');
-  $rootScope.server="http://localhost/myCaseStudy/admin/api/";
+  $rootScope.server="http://54.169.84.179/admin/api/";
   $rootScope.getIpURL = $rootScope.server+'get_ip.php';
   $rootScope.mobileMenu = 'hide';
   $http.get($rootScope.getIpURL).then(function(res) {
