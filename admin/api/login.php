@@ -37,8 +37,8 @@
 
       if ( $row_count == 'Y') {
           $resultJson = json_encode($result);
-          echo '{"page":"'.$page.'","status":"LS", "data": "'.$resultJson.'"}';
-          // echo $resultJson;
+          // echo '{"page":"'.$page.'","status":"LS", "data": "'.$resultJson.'"}';
+          echo $resultJson;
         } else {
           $message = 'IC';
           echo '{"page":"'.$page.'","status":"'.$message.'"}';

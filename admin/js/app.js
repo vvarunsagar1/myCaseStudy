@@ -56,9 +56,9 @@ app.controller('loginController', function ($rootScope, $scope, $http) {
       $rootScope.loginURL = $rootScope.server + 'login.php?ip=' + $rootScope.ip + '&email=' + $scope.loginProfile.email_id + '&password=' + $scope.loginProfile.password ;
       //console.log($rootScope.loginURL);
       $http.get($rootScope.loginURL).then(function(res){
-        $rootScope.profile = res.data;
+        $rootScope.profile = res.data[0];
         console.log(res);
-        if ($rootScope.profile.status == 'LS'){
+        if ($rootScope.profile.DEL_FLG == 'N'){
           console.log('profile', $rootScope.profile);
           window.localStorage['profile'] = JSON.stringify($rootScope.profile);
           window.location.href = 'index.html';
