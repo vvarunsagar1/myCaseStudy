@@ -21,7 +21,7 @@
     $password = $_GET['password'];
     $mobile = $_GET['mobile'];
     $name = $_GET['name'];
-    $user_type = 'A';
+    $user_type = 'U';
     $e_verify = 'N';
     $del_flg = 'N';
 

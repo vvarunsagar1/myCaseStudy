@@ -56,15 +56,21 @@ app.controller('loginController', function ($rootScope, $scope, $http) {
       $rootScope.loginURL = $rootScope.server + 'login.php?ip=' + $rootScope.ip + '&email=' + $scope.loginProfile.email_id + '&password=' + $scope.loginProfile.password ;
       //console.log($rootScope.loginURL);
       $http.get($rootScope.loginURL).then(function(res){
-        $rootScope.profile = res.data[0];
+        $rootScope.profile = res.data;
         console.log(res);
-        if ($rootScope.profile.DEL_FLG == 'N'){
-          console.log('profile', $rootScope.profile);
-          window.localStorage['profile'] = JSON.stringify($rootScope.profile);
-          window.location.href = 'index.html';
-        } else if ($rootScope.profile.status == 'IC'){
+        if ($rootScope.profile.status == 'IC'){
           console.log('message', $rootScope.profile);
           alert('Invalid Username or Password');
+        }
+        if ($rootScope.profile[0].DEL_FLG == 'N'){
+          console.log('profile', $rootScope.profile);
+          if ($rootScope.profile[0].user_type == 'U'){
+              alert('You are Not an Admin, you will be redirected to the user Login Page');
+              window.location.href="../login.html";
+          } else if($rootScope.profile[0].user_type == 'A') {
+            window.localStorage['profile'] = JSON.stringify($rootScope.profile[0]);
+            window.location.href = 'index.html';
+          }
         }
       })
     })
@@ -81,8 +87,9 @@ app.controller('loginController', function ($rootScope, $scope, $http) {
         $rootScope.registerResponse = res.data;
         if ($rootScope.registerResponse.status == 'RS'){
           alert('User Registered Successfully');
+          window.location.href='login.html';
         } else {
-          alert('Some Error Occured');
+          alert('Some Error Occured, Please try Again');
         }
       })
     })
