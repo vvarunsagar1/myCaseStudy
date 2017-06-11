@@ -43,6 +43,12 @@ app.controller('HomeController', function($scope,$rootScope,$http) {
       //console.log($scope.addNewEnquiryURL);
       $http.get($scope.addNewEnquiryURL).then(function(res){
         $scope.enquiryResponse = res;
+        if(res.data.status == 'S'){
+           alert('Message Sent Successfully');
+           window.location.reload();
+        } else if (res.data.status = 'N'){
+          alert('Some Error Occured');
+        }
         //console.log('enquiryResponse', $scope.enquiryResponse);
       })
     })

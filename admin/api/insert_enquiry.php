@@ -30,7 +30,7 @@
     $query->bindParam(":del_flg", $del_flg);
 
     if ($query->execute()) {
-      $message = 'New Record Inserted Successfully';
+      $status = 'S';
       $last_id = $dbc->lastInsertId();
 
       // Send mail
@@ -42,15 +42,15 @@
 				$headers .= "MIME-Version: 1.0\r\n";
 				$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-        $email_body .= "Dear ".$name.",<br> We received your message, Thank you for contacting us. We will reach you soon regarding your query.<br><br><strong>Thanks and Regards</strong><br>ABC Private Limited";
+        $email_admin_body .= "Dear Sir,<br> We received a message from <strong>Mr.".$name."</strong>, The customer query is <strong>".$message."</strong>";
 
 				mail($email,$email_subject,$email_body,$headers);
-        mail($config['to_email'], $email_subject, $email_admin_body, $headers);
+                                mail($config['to_email'], $email_subject, $email_admin_body, $headers);
 
     } else {
-      $message = 'SQL Error';
+      $status = 'N';
     }
   }
   message:
-   echo '{"page":"'.$page.'","status":"'.$message.'"}';
+   echo '{"page":"'.$page.'","status":"'.$status.'"}';
 ?>
