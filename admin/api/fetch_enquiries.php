@@ -16,7 +16,7 @@
     }
 
     $del_flg = 'N';
-    $checkForEnquiries = "SELECT enquiry_ip`, `name`, `email_id`, `message`, `visited_date` FROM `enquires` WHERE  `DEL_FLG` = :del_flg";
+    $checkForEnquiries = "SELECT `enquiry_ip`, `name`, `email_id`, `message`, `visited_date` FROM `enquires` WHERE  `DEL_FLG` = :del_flg";
     $query = $dbc->prepare($checkForEnquiries);
     $query->bindParam(":del_flg", $del_flg);
 
