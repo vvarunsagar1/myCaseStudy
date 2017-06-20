@@ -103,7 +103,7 @@
               <!-- Visitors -->
               <div class="col-md-5">
                 <div class="row">
-                  <h5> Visitors </h5>
+                  <h5> Visitors <span style="font-size:15px;color:blue;float:right" ng-click="JSONToCSVConvertor(visitors,'visitors_uptonow',true)"><a> Download </a></span></h5>
                 </div>
                 <div class="row" style="padding:15px;">
                   <input type="text" style="padding:10px;width:100%;" ng-model="visiterSearch" placeholder="Search For ....."/>
@@ -130,7 +130,7 @@
               <div class="col-md-7">
                 <div class="container-fluid">
                   <div class="row">
-                    <h5> Enquiries </h5>
+                    <h5> Enquiries  <span style="font-size:15px;color:blue;float:right" ng-click="JSONToCSVConvertor(enquiries,'enquiries_uptonow',true)"><a> Download </a></span></h5>
                   </div>
                   <div class="row" style="padding:15px;">
                     <input type="text" style="padding:10px;width:100%;" ng-model="enquirySearch" placeholder="Search For ....."/>

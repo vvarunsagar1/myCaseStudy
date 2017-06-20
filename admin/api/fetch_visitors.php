@@ -19,7 +19,7 @@
     $result_array = array();
 
     $del_flg = 'N';
-    $checkForRecord = "SELECT `visitor_id`,`visitor_ip`, `views`, `visited_date`, `DEL_FLG` FROM `visitors` WHERE  `DEL_FLG` = :del_flg";
+    $checkForRecord = "SELECT `visitor_ip`, `views`, `visited_date` FROM `visitors` WHERE  `DEL_FLG` = :del_flg";
     $query = $dbc->prepare($checkForRecord);
     $query->bindParam(":del_flg", $del_flg);
 
